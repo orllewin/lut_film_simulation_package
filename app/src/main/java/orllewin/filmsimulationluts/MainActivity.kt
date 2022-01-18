@@ -165,6 +165,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
+            R.id.menu_action_about -> {
+                AboutDialog().show(supportFragmentManager, "about_dialog")
+                true
+            }
             R.id.menu_action_column_toggle -> {
                 //This looks messy, and it is, but means the span count goes 1>2>3>2>1
                 when (layoutManager.spanCount) {

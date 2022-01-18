@@ -12,4 +12,10 @@
         android:title="@string/set_reference_image"
         app:showAsAction="always" />
 
+    <item
+        android:id="@+id/menu_action_about"
+        android:icon="@drawable/vector_info"
+        android:title="@string/about"
+        app:showAsAction="never" />
+
 </menu>

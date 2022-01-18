@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    android:orientation="vertical"
+    android:background="@color/black">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:text="Luts Explorer lets you preview lut filters from the RawTherapee Film Simulation collection and other sources and export them for use in other applications.\n\nFrom the RawTherapee website:\n"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textStyle="italic"
+        android:text="Disclaimer:\n\nThe trademarked names which may appear in the filenames of the HaldCLUT images are there for informational purposes only. They serve only to inform the user which film stock the given HaldCLUT image is designed to approximate. As there is no way to convey this information other than by using the trademarked name, we believe this constitutes fair use. Neither the publisher nor the authors are affiliated with or endorsed by the companies that own the trademarks."/>
+</androidx.appcompat.widget.LinearLayoutCompat>

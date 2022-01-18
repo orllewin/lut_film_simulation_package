@@ -72,6 +72,18 @@ class LutInfoDialog(
             toolkit.loadLut(requireContext(), activeLut)
             binding.lutPreviewImage.setImageBitmap(toolkit.process(referenceBitmap))
         }
+
+        if(lut.hasVariants()){
+            when (variantIndex) {
+                -1 -> binding.prevVariant.alpha = 0f
+                else -> binding.prevVariant.alpha = 1f
+            }
+
+            when (variantIndex) {
+                (lut.variants.size - 2) -> binding.nextVariant.alpha = 0f
+                else -> binding.nextVariant.alpha = 1f
+            }
+        }
     }
 
 }

@@ -10,8 +10,13 @@
         <entry key="app/src/main/res/drawable/vector_add_photo.xml" value="0.18051282051282053" />
         <entry key="app/src/main/res/drawable/vector_columns.xml" value="0.18051282051282053" />
         <entry key="app/src/main/res/drawable/vector_drawable_circle.xml" value="0.18051282051282053" />
+        <entry key="app/src/main/res/drawable/vector_drawable_circle_dark.xml" value="0.18051282051282053" />
+        <entry key="app/src/main/res/drawable/vector_info.xml" value="0.18051282051282053" />
         <entry key="app/src/main/res/drawable/vector_launcher_background.xml" value="0.18051282051282053" />
         <entry key="app/src/main/res/drawable/vector_launcher_foreground.xml" value="0.18051282051282053" />
+        <entry key="app/src/main/res/drawable/vector_next.xml" value="0.18051282051282053" />
+        <entry key="app/src/main/res/drawable/vector_previous.xml" value="0.18051282051282053" />
+        <entry key="app/src/main/res/layout/about_bottomsheet.xml" value="0.1671875" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.14895833333333333" />
         <entry key="app/src/main/res/layout/lut_cell.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/lut_info_bottomsheet.xml" value="0.5" />

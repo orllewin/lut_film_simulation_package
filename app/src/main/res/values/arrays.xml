@@ -1,79 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="all_luts">
-        <item>:Monochrome</item>
-        <item>::Agfa</item>
-        <item>agfa_apx_100</item>
-        <item>agfa_apx_25</item>
-        <item>::Fuji</item>
-        <item>fuji_fp_3000b_1</item>
-        <item>fuji_fp_3000b_2</item>
-        <item>fuji_fp_3000b_3</item>
-        <item>fuji_fp_3000b_4</item>
-        <item>fuji_fp_3000b_5</item>
-        <item>fuji_fp_3000b_6</item>
-        <item>fuji_fp_3000b_hc</item>
-        <item>fuji_fp_3000b_negative_1</item>
-        <item>fuji_fp_3000b_negative_2</item>
-        <item>fuji_fp_3000b_negative_3</item>
-        <item>fuji_fp_3000b_negative_4</item>
-        <item>fuji_fp_3000b_negative_5</item>
-        <item>fuji_fp_3000b_negative_6</item>
-        <item>fuji_fp_3000b_negative_early</item>
-        <item>fuji_neopan_1600_1</item>
-        <item>fuji_neopan_1600_2</item>
-        <item>fuji_neopan_1600_3</item>
-        <item>fuji_neopan_1600_4</item>
-        <item>fuji_neopan_acros_100</item>
-        <item>::Ilford</item>
-        <item>ilford_delta_100</item>
-        <item>ilford_delta_3200_1</item>
-        <item>ilford_delta_3200_2</item>
-        <item>ilford_delta_3200_3</item>
-        <item>ilford_delta_3200_4</item>
-        <item>ilford_delta_400</item>
-        <item>ilford_fp4_plus_125</item>
-        <item>ilford_hp5_1</item>
-        <item>ilford_hp5_2</item>
-        <item>ilford_hp5_3</item>
-        <item>ilford_hp5_4</item>
-        <item>ilford_hp5_plus_400</item>
-        <item>ilford_hps_800</item>
-        <item>ilford_pan_f_plus_50</item>
-        <item>ilford_xp2</item>
-        <item>::Kodak</item>
-        <item>kodak_hie_hs_infra</item>
-        <item>kodak_bw_400_cn</item>
-        <item>kodak_t_max_100</item>
-        <item>kodak_t_max_400</item>
-        <item>kodak_tmax_3200_1</item>
-        <item>kodak_tmax_3200_2</item>
-        <item>kodak_tmax_3200_3_alt</item>
-        <item>kodak_tmax_3200_4</item>
-        <item>kodak_tmax_3200_5</item>
-        <item>kodak_tri_x_400_1</item>
-        <item>kodak_tri_x_400_2</item>
-        <item>kodak_tri_x_400_3_alt</item>
-        <item>kodak_tri_x_400_4</item>
-        <item>kodak_tri_x_400_5</item>
-        <item>::Polaroid</item>
-        <item>polaroid_664</item>
-        <item>polaroid_665_1</item>
-        <item>polaroid_665_2</item>
-        <item>polaroid_665_3</item>
-        <item>polaroid_665_4</item>
-        <item>polaroid_665_5</item>
-        <item>polaroid_665_negative_1</item>
-        <item>polaroid_665_negative_2</item>
-        <item>polaroid_665_negative_3</item>
-        <item>polaroid_665_negative_hc</item>
-        <item>polaroid_667</item>
-        <item>polaroid_672</item>
-        <item>::Rollei</item>
-        <item>rollei_ir_400</item>
-        <item>rollei_ortho_25</item>
-        <item>rollei_retro_100_tonal</item>
-        <item>rollei_retro_80s</item>
         <item>:Colour</item>
         <item>::Agfa</item>
         <item>agfa_precisa_100</item>
@@ -219,18 +146,6 @@
         <item>polaroid_690_warm_4</item>
         <item>polaroid_690_warm_5</item>
         <item>polaroid_polachrome</item>
-        <item>polaroid_px_100uv_cold_1</item>
-        <item>polaroid_px_100uv_cold_2</item>
-        <item>polaroid_px_100uv_cold_3</item>
-        <item>polaroid_px_100uv_cold_4</item>
-        <item>polaroid_px_100uv_cold_5</item>
-        <item>polaroid_px_100uv_cold_6</item>
-        <item>polaroid_px_100uv_warm_1</item>
-        <item>polaroid_px_100uv_warm_2</item>
-        <item>polaroid_px_100uv_warm_3</item>
-        <item>polaroid_px_100uv_warm_4</item>
-        <item>polaroid_px_100uv_warm_5</item>
-        <item>polaroid_px_100uv_warm_6</item>
         <item>polaroid_px_680_1</item>
         <item>polaroid_px_680_2</item>
         <item>polaroid_px_680_3</item>
@@ -273,6 +188,91 @@
         <item>polaroid_time_zero_expired_cold_2</item>
         <item>polaroid_time_zero_expired_cold_3</item>
         <item>polaroid_time_zero_expired_cold_4</item>
+        <item>:Monochrome</item>
+        <item>::Agfa</item>
+        <item>agfa_apx_100</item>
+        <item>agfa_apx_25</item>
+        <item>::Fuji</item>
+        <item>fuji_fp_3000b_1</item>
+        <item>fuji_fp_3000b_2</item>
+        <item>fuji_fp_3000b_3</item>
+        <item>fuji_fp_3000b_4</item>
+        <item>fuji_fp_3000b_5</item>
+        <item>fuji_fp_3000b_6</item>
+        <item>fuji_fp_3000b_hc</item>
+        <item>fuji_fp_3000b_negative_1</item>
+        <item>fuji_fp_3000b_negative_2</item>
+        <item>fuji_fp_3000b_negative_3</item>
+        <item>fuji_fp_3000b_negative_4</item>
+        <item>fuji_fp_3000b_negative_5</item>
+        <item>fuji_fp_3000b_negative_6</item>
+        <item>fuji_fp_3000b_negative_early</item>
+        <item>fuji_neopan_1600_1</item>
+        <item>fuji_neopan_1600_2</item>
+        <item>fuji_neopan_1600_3</item>
+        <item>fuji_neopan_1600_4</item>
+        <item>fuji_neopan_acros_100</item>
+        <item>::Ilford</item>
+        <item>ilford_delta_100</item>
+        <item>ilford_delta_3200_1</item>
+        <item>ilford_delta_3200_2</item>
+        <item>ilford_delta_3200_3</item>
+        <item>ilford_delta_3200_4</item>
+        <item>ilford_delta_400</item>
+        <item>ilford_fp4_plus_125</item>
+        <item>ilford_hp5_1</item>
+        <item>ilford_hp5_2</item>
+        <item>ilford_hp5_3</item>
+        <item>ilford_hp5_4</item>
+        <item>ilford_hp5_plus_400</item>
+        <item>ilford_hps_800</item>
+        <item>ilford_pan_f_plus_50</item>
+        <item>ilford_xp2</item>
+        <item>::Kodak</item>
+        <item>kodak_hie_hs_infra</item>
+        <item>kodak_bw_400_cn</item>
+        <item>kodak_t_max_100</item>
+        <item>kodak_t_max_400</item>
+        <item>kodak_tmax_3200_1</item>
+        <item>kodak_tmax_3200_2</item>
+        <item>kodak_tmax_3200_3_alt</item>
+        <item>kodak_tmax_3200_4</item>
+        <item>kodak_tmax_3200_5</item>
+        <item>kodak_tri_x_400_1</item>
+        <item>kodak_tri_x_400_2</item>
+        <item>kodak_tri_x_400_3_alt</item>
+        <item>kodak_tri_x_400_4</item>
+        <item>kodak_tri_x_400_5</item>
+        <item>::Polaroid</item>
+        <item>polaroid_664</item>
+        <item>polaroid_665_1</item>
+        <item>polaroid_665_2</item>
+        <item>polaroid_665_3</item>
+        <item>polaroid_665_4</item>
+        <item>polaroid_665_5</item>
+        <item>polaroid_665_negative_1</item>
+        <item>polaroid_665_negative_2</item>
+        <item>polaroid_665_negative_3</item>
+        <item>polaroid_665_negative_hc</item>
+        <item>polaroid_667</item>
+        <item>polaroid_672</item>
+        <item>polaroid_px_100uv_cold_1</item>
+        <item>polaroid_px_100uv_cold_2</item>
+        <item>polaroid_px_100uv_cold_3</item>
+        <item>polaroid_px_100uv_cold_4</item>
+        <item>polaroid_px_100uv_cold_5</item>
+        <item>polaroid_px_100uv_cold_6</item>
+        <item>polaroid_px_100uv_warm_1</item>
+        <item>polaroid_px_100uv_warm_2</item>
+        <item>polaroid_px_100uv_warm_3</item>
+        <item>polaroid_px_100uv_warm_4</item>
+        <item>polaroid_px_100uv_warm_5</item>
+        <item>polaroid_px_100uv_warm_6</item>
+        <item>::Rollei</item>
+        <item>rollei_ir_400</item>
+        <item>rollei_ortho_25</item>
+        <item>rollei_retro_100_tonal</item>
+        <item>rollei_retro_80s</item>
         <item>:Miscellaneous</item>
         <item>anime</item>
         <item>bleachbypass1</item>
