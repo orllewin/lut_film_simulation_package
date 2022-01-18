@@ -10,7 +10,13 @@ class Lut(val label: String, val resourceId: Int, val isDivider: Boolean = false
 
     var divSize = divMedium
 
+    val variants = mutableListOf<Lut>()
+
     fun toFilename(): String{
         return "${label.lowercase().replace(" ", "_")}.png"
+    }
+
+    fun addVariant(lut: Lut) {
+        variants.add(lut)
     }
 }
