@@ -1,0 +1,5 @@
+<resources>
+    <string name="launcher_name">Luts</string>
+    <string name="lut_explorer">Lut Explorer</string>
+    <string name="set_reference_image">Set reference image</string>
+</resources>
