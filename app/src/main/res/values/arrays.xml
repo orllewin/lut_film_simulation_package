@@ -189,6 +189,9 @@
         <item>kodak_portra_800_3</item>
         <item>kodak_portra_800_4</item>
         <item>kodak_portra_800_hc</item>
+        <item>::Lomography</item>
+        <item>lomography_redscale_100</item>
+        <item>lomography_x_pro_slide_200</item>
         <item>::Polaroid</item>
         <item>polaroid_669_1</item>
         <item>polaroid_669_2</item>
@@ -290,8 +293,6 @@
         <item>futuristicbleak4</item>
         <item>horrorblue</item>
         <item>latesunset</item>
-        <item>lomography_redscale_100</item>
-        <item>lomography_x_pro_slide_200</item>
         <item>lut_bleach</item>
         <item>lut_blue_crush</item>
         <item>lut_bw_contrast</item>

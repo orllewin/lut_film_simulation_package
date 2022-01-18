@@ -17,20 +17,61 @@ class LutInfoDialog(
 
     private val toolkit = UnrealLutToolkit()
 
+    private var variantIndex = -1//The original/main
+
+    private var activeLut = lut
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = LutInfoBottomsheetBinding.inflate(inflater)
-        binding.lutLabel.text = "Label:\n${lut.label}\n\nFilename: ${lut.toFilename()}"
 
-        referenceBitmap?.let{ bitmap ->
-            toolkit.loadLut(requireContext(), lut)
-            binding.lutPreviewImage.setImageBitmap(toolkit.process(referenceBitmap))
-        }
+
+        refresh()
 
         binding.exportLutButton.setOnClickListener {
-            onExport(lut)
+            onExport(activeLut)
+        }
+
+        if(lut.variants.isNotEmpty()){
+            println("Lut has variants")
+            binding.prevVariant.show()
+            binding.nextVariant.show()
+
+            binding.prevVariant.setOnClickListener {
+                if(variantIndex > -1) variantIndex--
+
+                when (variantIndex) {
+                    -1 -> {
+                        activeLut = lut
+                        refresh()
+                    }
+                    else -> {
+                        activeLut = lut.variants[variantIndex]
+                        refresh()
+                    }
+                }
+            }
+
+            binding.nextVariant.setOnClickListener {
+                when (lut.variants.size) {
+                    1 -> variantIndex = 0
+                    else -> if(variantIndex < lut.variants.size-2) variantIndex++
+                }
+
+
+                activeLut = lut.variants[variantIndex]
+                refresh()
+            }
         }
 
         return binding.root
+    }
+
+    private fun refresh(){
+        binding.lutLabel.text = "Label:\n${activeLut.label}\n\nFilename: ${activeLut.toFilename()}"
+        referenceBitmap?.let{ bitmap ->
+            toolkit.loadLut(requireContext(), activeLut)
+            binding.lutPreviewImage.setImageBitmap(toolkit.process(referenceBitmap))
+        }
     }
 
 }

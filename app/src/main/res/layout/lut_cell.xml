@@ -42,6 +42,22 @@
                 android:visibility="gone"
                 tools:text="Hello World" />
 
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/variant_countlabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:textSize="10sp"
+                android:textColor="#ffffff"
+                android:gravity="center"
+                android:background="@drawable/vector_drawable_circle"
+                android:padding="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginTop="4dp"
+                android:layout_alignParentEnd="true"
+                android:visibility="gone"
+                tools:text="Hello World" />
+
 
         </RelativeLayout>
 

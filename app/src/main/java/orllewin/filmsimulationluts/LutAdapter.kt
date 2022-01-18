@@ -75,6 +75,13 @@ class LutAdapter(val onLutSelected: (lut: Lut) -> Unit): RecyclerView.Adapter<Lu
             holder.binding.root.setOnClickListener {
                 onLutSelected(luts[holder.adapterPosition])
             }
+
+            if(lut.hasVariants()){
+                holder.binding.variantCountlabel.show()
+                holder.binding.variantCountlabel.text = "+${lut.variants.size}"
+            }else{
+                holder.binding.variantCountlabel.hide()
+            }
         }
     }
 

@@ -19,4 +19,6 @@ class Lut(val label: String, val resourceId: Int, val isDivider: Boolean = false
     fun addVariant(lut: Lut) {
         variants.add(lut)
     }
+
+    fun hasVariants(): Boolean = variants.isNotEmpty()
 }
