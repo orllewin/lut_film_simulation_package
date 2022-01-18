@@ -2,23 +2,50 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="#1d1d1d"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/preview_card"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="2dp"
         app:contentPadding="0dp"
         app:cardCornerRadius="8dp"
+        app:cardBackgroundColor="#1d1d1d"
+        android:background="#1d1d1d"
         >
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/lut_image"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="true"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1d1d1d">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/lut_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:adjustViewBounds="true"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:textSize="18sp"
+                android:textColor="#ffffff"
+                android:paddingTop="8dp"
+                android:paddingStart="8dp"
+                android:paddingBottom="8dp"
+                android:visibility="gone"
+                tools:text="Hello World" />
+
+
+        </RelativeLayout>
+
+
 
     </com.google.android.material.card.MaterialCardView>
 

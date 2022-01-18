@@ -7,6 +7,10 @@
         <entry key="app/src/main/res/drawable/ic_launcher.xml" value="0.16510416666666666" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.16510416666666666" />
         <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.16510416666666666" />
+        <entry key="app/src/main/res/drawable/vector_add_photo.xml" value="0.18051282051282053" />
+        <entry key="app/src/main/res/drawable/vector_columns.xml" value="0.18051282051282053" />
+        <entry key="app/src/main/res/drawable/vector_launcher_background.xml" value="0.18051282051282053" />
+        <entry key="app/src/main/res/drawable/vector_launcher_foreground.xml" value="0.18051282051282053" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.14895833333333333" />
         <entry key="app/src/main/res/layout/lut_cell.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/lut_info_bottomsheet.xml" value="0.14895833333333333" />

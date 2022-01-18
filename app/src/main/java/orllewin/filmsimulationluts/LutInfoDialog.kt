@@ -32,4 +32,5 @@ class LutInfoDialog(
 
         return binding.root
     }
+
 }

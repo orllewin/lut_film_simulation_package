@@ -2,6 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
+        android:id="@+id/menu_action_column_toggle"
+        android:icon="@drawable/vector_columns"
+        android:title="@string/column_toggle"
+        app:showAsAction="always" />
+    <item
         android:id="@+id/menu_action_set_reference_image"
         android:icon="@drawable/vector_add_photo"
         android:title="@string/set_reference_image"

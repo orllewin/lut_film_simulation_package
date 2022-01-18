@@ -14,7 +14,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.widget.Toast
-import androidx.recyclerview.widget.GridLayoutManager
 import orllewin.file_io.OppenFileIO
 import orllewin.filmsimulationluts.databinding.ActivityMainBinding
 import java.lang.Exception
@@ -24,15 +23,23 @@ import android.view.MenuItem
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
 
+    lateinit var layoutManager: StaggeredGridLayoutManager
+
     private var fileIO = OppenFileIO()
 
     private lateinit var resultLauncher: ActivityResultLauncher<Intent>
     private var requestMultiplePermissions: ActivityResultLauncher<Array<String>>? = null
+
+    val defaultSpan = 3
+    var prevSpan = 1
 
     private val adapter = LutAdapter { lut ->
         showLutInfo(lut)
@@ -55,12 +62,28 @@ class MainActivity : AppCompatActivity() {
 
         fileIO.register(this)
 
-        val defaultReferenceBitmap = BitmapFactory.decodeResource(resources, R.drawable.reference_image)
+        layoutManager = StaggeredGridLayoutManager(defaultSpan, RecyclerView.VERTICAL)
+        binding.lutRecycler.layoutManager = layoutManager
+        binding.lutRecycler.adapter = adapter
+
+
+        val bmOptions = BitmapFactory.Options()
+        bmOptions.inJustDecodeBounds = true
+
+        BitmapFactory.decodeResource(resources, R.drawable.reference_image, bmOptions)
+
+        val photoW: Int = bmOptions.outWidth
+        val targetPixels = Math.max(Resources.getSystem().displayMetrics.widthPixels/3, 400)
+        val scaleFactor: Int = photoW/targetPixels
+
+        //Reset Bitmap options for actual import:
+        bmOptions.inJustDecodeBounds = false
+        bmOptions.inSampleSize = scaleFactor
+        bmOptions.inPurgeable = true
+
+        val defaultReferenceBitmap = BitmapFactory.decodeResource(resources, R.drawable.reference_image, bmOptions)
         BitmapHolder.bitmap = defaultReferenceBitmap
         adapter.setReferenceImage(BitmapHolder.bitmap!!)
-
-        binding.lutRecycler.layoutManager = GridLayoutManager(this, 3)
-        binding.lutRecycler.adapter = adapter
 
         loadLuts()
     }
@@ -72,12 +95,22 @@ class MainActivity : AppCompatActivity() {
         val luts = mutableListOf<Lut>()
 
         repeat(monoLutCount){ i ->
-
             val resourceIdName = allLutResources[i]
-            val resourceId = resources.getIdentifier(resourceIdName, "drawable", packageName)
-            val label = resourceIdName.replace("_", " ").capitaliseAll()
-            val lut = Lut(label, resourceId)
-            luts.add(lut)
+
+            if(resourceIdName.startsWith(":")){
+                val dividerLut = Lut(resourceIdName.substring(resourceIdName.lastIndexOf(":") + 1), -1, true)
+                when {
+                    resourceIdName.startsWith(":::") -> dividerLut.divSize = Lut.divSmall
+                    resourceIdName.startsWith("::") -> dividerLut.divSize = Lut.divMedium
+                    resourceIdName.startsWith(":") -> dividerLut.divSize = Lut.divLarge
+                }
+                luts.add(dividerLut)
+            }else {
+                val resourceId = resources.getIdentifier(resourceIdName, "drawable", packageName)
+                val label = resourceIdName.replace("_", " ").capitaliseAll()
+                val lut = Lut(label, resourceId)
+                luts.add(lut)
+            }
         }
 
         adapter.updateLuts(luts)
@@ -154,8 +187,31 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
+
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
+            R.id.menu_action_column_toggle -> {
+                when (layoutManager.spanCount) {
+                    3 -> {
+                        prevSpan = 2
+                        layoutManager.spanCount = 2
+                    }
+                    2 -> {
+                        if(prevSpan == 2){
+                            layoutManager.spanCount = 1
+                        }else{
+                            layoutManager.spanCount = 3
+                        }
+                        prevSpan = layoutManager.spanCount
+                    }
+                    1 -> {
+                        prevSpan = 1
+                        layoutManager.spanCount = 2
+                    }
+                }
+                true
+            }
             R.id.menu_action_set_reference_image -> {
                 when {
                     hasPermissions() -> {
@@ -212,10 +268,7 @@ class MainActivity : AppCompatActivity() {
         BitmapFactory.decodeFileDescriptor(fileDescriptor.fileDescriptor, Rect(), bmOptions)
 
         val photoW: Int = bmOptions.outWidth
-        val photoH: Int = bmOptions.outHeight
-
         val targetPixels = Math.max(Resources.getSystem().displayMetrics.widthPixels/3, 400)
-
         val scaleFactor: Int = photoW/targetPixels
 
         //Reset Bitmap options for actual import:
