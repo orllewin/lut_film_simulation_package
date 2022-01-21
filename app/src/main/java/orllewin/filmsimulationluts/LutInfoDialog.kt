@@ -7,6 +7,16 @@ import android.view.View
 import android.view.ViewGroup
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import orllewin.filmsimulationluts.databinding.LutInfoBottomsheetBinding
+import android.content.ClipData
+import android.content.ClipboardManager
+
+import android.content.Context.CLIPBOARD_SERVICE
+import android.widget.Toast
+
+import androidx.core.content.ContextCompat.getSystemService
+import android.content.Intent
+import android.net.Uri
+
 
 class LutInfoDialog(
     val lut: Lut,
@@ -29,6 +39,22 @@ class LutInfoDialog(
 
         binding.exportLutButton.setOnClickListener {
             onExport(activeLut)
+        }
+
+        binding.exportLentoButton.setOnClickListener {
+            val lutIO = LutIO()
+            val encoded = lutIO.lentoEncode(requireContext(), activeLut)
+
+            lutIO.lentoDecode(encoded){
+                println("Decoded lut label: ${lutIO.decodedLabel}")
+                println("Decoded lut filname: ${lutIO.decodedFilename}")
+            }
+
+            val clip = ClipData.newPlainText("Lento LUT", encoded)
+            val clipboard: ClipboardManager? = requireContext().getSystemService(CLIPBOARD_SERVICE) as ClipboardManager?
+            clipboard?.setPrimaryClip(clip)
+
+            Toast.makeText(requireContext(), "${activeLut.label} copied to Clipboard", Toast.LENGTH_SHORT).show()
         }
 
         if(lut.variants.isNotEmpty()){
@@ -63,11 +89,15 @@ class LutInfoDialog(
             }
         }
 
+        binding.portableLutInfoButton.setOnClickListener {
+            openPortableLutFormatWebpage()
+        }
+
         return binding.root
     }
 
     private fun refresh(){
-        binding.lutLabel.text = "Label:\n${activeLut.label}\n\nFilename: ${activeLut.toFilename()}"
+        binding.lutLabel.text = "Label:\n${activeLut.label}\n\nFilename:\n${activeLut.toFilename()}"
         referenceBitmap?.let{ bitmap ->
             toolkit.loadLut(requireContext(), activeLut)
             binding.lutPreviewImage.setImageBitmap(toolkit.process(referenceBitmap))
@@ -84,6 +114,13 @@ class LutInfoDialog(
                 else -> binding.nextVariant.alpha = 1f
             }
         }
+    }
+
+    private fun openPortableLutFormatWebpage(){
+        val url = "https://orllewin.uk/portable_lut_format/"
+        val intent = Intent(Intent.ACTION_VIEW)
+        intent.data = Uri.parse(url)
+        startActivity(intent)
     }
 
 }

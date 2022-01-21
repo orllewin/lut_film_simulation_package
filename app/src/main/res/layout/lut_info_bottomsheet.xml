@@ -61,18 +61,51 @@
         android:textColor="@color/white"
         android:paddingStart="8dp"
         android:paddingEnd="8dp"
-        android:textSize="18sp"
+        android:textSize="14sp"
         android:layout_toEndOf="@+id/preview_card"
         tools:text="HELLO WORLD i am a log title will i wrap yes I will" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/export_lut_Button"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/preview_card"
+        android:layout_below="@+id/lut_label"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
+        android:layout_toEndOf="@+id/preview_card"
+        android:text="Export Lut Image"
+        android:textAllCaps="false" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/export_lento_Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/preview_card"
+            android:layout_below="@+id/export_lut_Button"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:textAllCaps="false"
+            android:text="Copy Lento Encoded" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/portable_lut_info_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/preview_card"
+        android:layout_below="@+id/export_lento_Button"
+        android:textColor="@color/white"
+        android:drawableStart="@drawable/vector_info"
+        android:drawableTint="@color/vivid_red"
+        android:drawablePadding="6dp"
+        android:text="Lento Encoded info"
+        android:textSize="12sp"
         android:textAllCaps="false"
-        android:layout_below="@+id/lut_label"
-        android:text="Export" />
+        android:layout_centerVertical="true"
+        android:layout_marginStart="6dp"
+        android:backgroundTint="@color/black"
+        android:backgroundTintMode="src_in" />
+
+
+
 </RelativeLayout>
